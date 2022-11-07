@@ -36,7 +36,7 @@ public class CustomerInterceptorTests {
 
     @SneakyThrows
     @Test
-    public void testCustomerFilter() {
+    public void testCustomerInterceptor() {
         Mockito.when(customerService.getCustomer(Mockito.anyLong())).thenReturn(Optional.of(new Customer()));
         standaloneSetup(new HelloWorldRest())
                 .addMappedInterceptors(new String[]{"/customer/*"}, customerInterceptor)
@@ -48,7 +48,7 @@ public class CustomerInterceptorTests {
 
     @SneakyThrows
     @Test
-    public void testCustomerFilterWithCustomerNotFound() {
+    public void testCustomerInterceptorWithCustomerNotFound() {
         standaloneSetup(new HelloWorldRest())
                 .addMappedInterceptors(new String[]{"/customer/*"}, customerInterceptor)
                 .build()

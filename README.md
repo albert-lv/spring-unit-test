@@ -5,6 +5,11 @@ but changes in the interception layer are often fatal.
 
 So here I will show you how to construct suitable unit tests for Filter, Interceptor and Spring AOP.
 
+**Think in depth: We should write codes which is easy to test.**
+
+In the interception layer, we need to extract codes of the core logic to single method which is easy to test. 
+Then we don't need to write complicated unit tests of the interception layer.
+
 
 **Direct links**
 
